@@ -1,4 +1,4 @@
-English | [简体中文](/leeguangxing/mdserver/blob/master/README.zh-cn.md)
+English | [简体中文](/blob/master/README.zh-CN.md)
 
 # Introduction
 

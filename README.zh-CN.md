@@ -1,4 +1,4 @@
-[English](/leeguangxing/mdserver/blob/master/README.md) | 简体中文
+[English](/blob/master/README.md) | 简体中文
 
 # 使用说明
 

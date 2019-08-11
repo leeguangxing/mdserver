@@ -1,0 +1,36 @@
+{
+  "name": "@leeguangxing/mdserver",
+  "version": "1.0.0",
+  "description": "The scaffolding is used to quickly create local web services for MD documents and automatically synchronize to browsers after modifying documents.",
+  "main": "bin/www",
+  "scripts": {
+    "start": "concurrently \"node-dev bin/www\" \"npm run watch\"",
+    "watch": "browser-sync start --port 3000 --proxy \"localhost\" --files \"public/**/*\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "koa2",
+    "markdown-it",
+    "markdown server"
+  ],
+  "author": "www.leeguangxing.cn",
+  "license": "MIT",
+  "dependencies": {
+    "debug": "^2.6.3",
+    "flat": "^4.1.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^2.0.1",
+    "koa-onerror": "^1.2.1",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "lodash": "^4.17.15",
+    "markdown-it": "^9.0.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "concurrently": "^4.1.1",
+    "node-dev": "^3.1.3"
+  }
+}

@@ -10,7 +10,7 @@ The scaffolding is used to quickly create local web services for MD documents an
 ```bash
 yarn install
 ```
-2、Start the local web server demo：
+2、Start the local Web Server demo：
 ```bash
 yarn start
 ```

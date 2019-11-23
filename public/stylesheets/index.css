@@ -1,0 +1,106 @@
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+/* 最后修改时间文字 */
+.modified-time {
+    float: right;
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    line-height: 60px;
+}
+
+/* 两列布局 */
+html,
+body,
+.markdown-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.markdown-nav {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    overflow-y: auto;
+    width: 300px;
+    color: #364149;
+    background: #fafafa;
+    border-right: 1px solid rgba(0, 0, 0, .07);
+}
+
+.markdown-body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 300px;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 20px;
+    color: #000;
+    background: #fff;
+}
+
+/* 左侧导航 */
+.markdown-nav > .markdown-articles {
+    padding-left: 0;
+}
+
+.markdown-nav > .markdown-articles > li > a {
+    font-size: 16px;
+}
+
+.markdown-articles {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.markdown-article,
+.markdown-article-text {
+    display: block;
+    margin: 0;
+    padding: 10px 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #364149;
+    cursor: pointer;
+}
+
+.markdown-articles {
+    padding-left: 20px;
+}
+
+.markdown-article {
+    font-size: 14px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.markdown-article:hover {
+    text-decoration: underline;
+}
+
+.markdown-article.active {
+    color: #008cff;
+    text-decoration: none;
+}
+
+.markdown-article-text {
+    text-decoration: none;
+    cursor: default;
+}
+
+/* 内容区 */
+.markdown-body-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

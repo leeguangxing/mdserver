@@ -17,9 +17,13 @@ yarn start
 
 ## Add md document
 
-1、The .md file in the directory /public/md is automatically mapped to the RESTful routers of the web service. For example, /public/md/part1/block1.md will be mapped to /part1/block1. Directory name ~~images~~ are retained and not be mapped. Also, /public is also the static directory of the web server. The image path in .md file can be used as http://localhost/md/part1/images/1.png or /md/part1/images/1.png.
+1、The .md file in the directory /public/md is automatically mapped to the RESTful routers of the web service. For example, /public/md/part1/block1.md will be mapped to /part1/block1. Directory name ~~images~~ are retained and not be mapped. Also, /public is also the static directory of the web server. The image path in .md file can be used as /md/part1/images/1.png.
 
 2、 Add html link in /views/index.js index view.
+
+## Define left menus
+
+You can create the file nav.config.json to define the menus on the left. You can also delete the file, which will automatically generate the left menus according to the directory /public/md.
 
 ## Auto restart
 

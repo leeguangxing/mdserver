@@ -11,7 +11,7 @@ module.exports.buildContentPage = (mdContent='', mdNav='') => `<!doctype html>
 </head>
 <body>
 <div class="markdown-container">
-    <div class="markdown-nav">
+    <div class="markdown-nav" id="markdown-nav">
         ${mdNav}
     </div>
     <div class="markdown-content">

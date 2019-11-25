@@ -67,6 +67,7 @@ body,
     display: block;
     margin: 0;
     padding: 10px 15px;
+    font-size: 14px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

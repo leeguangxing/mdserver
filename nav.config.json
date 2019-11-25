@@ -1,18 +1,21 @@
-[
-  {
-    "title": "1.项目介绍",
-    "link": "/part1/block1",
-    "children": [
-      {
-        "title": "组件说明",
-        "link": "/part2/block1",
-        "children": [
-          {
-            "title": "组件说明",
-            "link": "/part2/block2/menu1"
-          }
-        ]
-      }
-    ]
-  }
-]
+{
+  "indexLink": "/part1/block1",
+  "menus": [
+    {
+      "title": "1.项目介绍",
+      "link": "/part1/block1",
+      "children": [
+        {
+          "title": "组件说明",
+          "link": "/part2/block1",
+          "children": [
+            {
+              "title": "组件说明",
+              "link": "/part2/block2/menu1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

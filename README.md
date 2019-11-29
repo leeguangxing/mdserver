@@ -31,4 +31,4 @@ Use node-dev to restart koa2 server (use port 80).
 
 Use browser-sync to reload browser when .md file was Changed (use port 3000).
 
-Notice, when /views/index.js was changed, you need to refresh browser by yourself, because the browser don't know the koa2 server restart.
+Notice, when /nav.config.json was changed, you need to refresh browser by yourself, because the browser don't know the koa2 server restart.

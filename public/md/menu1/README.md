@@ -1,5 +1,3 @@
-English | [简体中文](/README.zh-CN.md)
-
 # Introduction
 
 The scaffolding is based on koa2 to implement server-side rendering of md documents. It can help us accomplish the following tasks:  
@@ -100,4 +98,3 @@ Copy the project code to the public/md directory and clean up irrelevant files t
 1、The names of directories and files in the public/md directory cannot contain periods (.).
 
 2、When the routers automatically created from the document directory, the addition, deletion and modification of documents will not be automatically updated to the browser.
-

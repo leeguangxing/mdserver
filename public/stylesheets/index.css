@@ -4,16 +4,6 @@ body {
     margin: 0;
 }
 
-/* 最后修改时间文字 */
-.modified-time {
-    float: right;
-    font-size: 14px;
-    font-weight: normal;
-    color: #999;
-    line-height: 60px;
-}
-
-/* 两列布局 */
 html,
 body,
 .markdown-container {
@@ -22,44 +12,43 @@ body,
     height: 100%;
 }
 
+/* 左侧导航 */
 .markdown-nav {
     position: absolute;
     top: 0;
     bottom: 0;
     left: 0;
     z-index: 1;
-    overflow-y: auto;
+    overflow: hidden;
     width: 300px;
     color: #364149;
     background: #fafafa;
     border-right: 1px solid rgba(0, 0, 0, .07);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
 
-.markdown-body {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 300px;
-    bottom: 0;
-    overflow-y: auto;
-    padding: 20px;
-    color: #000;
-    background: #fff;
+.markdown-nav a {
+    -webkit-tap-highlight-color: transparent;
 }
 
-/* 左侧导航 */
 .markdown-nav > .markdown-articles {
+    position: absolute;
+    width: calc(100% + 30px);
+    height: 100%;
+    overflow-y: auto;
     padding-left: 0;
 }
 
 .markdown-nav > .markdown-articles > li > a {
     font-size: 16px;
+    font-weight: bold;
 }
 
 .markdown-articles {
-    list-style: none;
     margin: 0;
-    padding: 0;
+    padding-left: 20px;
+    list-style: none;
 }
 
 .markdown-article,
@@ -72,16 +61,12 @@ body,
     text-overflow: ellipsis;
     white-space: nowrap;
     color: #364149;
+    text-decoration: none;
     cursor: pointer;
-}
-
-.markdown-articles {
-    padding-left: 20px;
 }
 
 .markdown-article {
     font-size: 14px;
-    text-decoration: none;
     cursor: pointer;
 }
 
@@ -95,13 +80,89 @@ body,
 }
 
 .markdown-article-text {
-    text-decoration: none;
     cursor: default;
 }
 
-/* 内容区 */
-.markdown-body-iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
+/* 右侧内容 */
+.markdown-body {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 300px;
+    bottom: 0;
+    overflow-y: auto;
+    padding: 30px;
+    color: #000;
+    background: #fff;
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
 }
+
+.markdown-body a[onclick] {
+    color: #0366d6;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.markdown-body a[onclick]:hover {
+    text-decoration: underline;
+}
+
+/* 菜单收展 */
+.markdown-content {
+    position: relative;
+    height: 100%;
+}
+.toggle-menu {
+    position: absolute;
+    top: 10px;
+    left: 300px;
+    z-index: 2;
+    display: block;
+    width: 16px;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+    cursor: pointer;
+    border-top: 1px solid rgba(0, 0, 0, .07);
+    border-right: 1px solid rgba(0, 0, 0, .07);
+    border-bottom: 1px solid rgba(0, 0, 0, .07);
+    -webkit-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+}
+
+.toggle-menu:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.toggle-menu::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 12px;
+    left: 6px;
+    width: 2px;
+    height: 16px;
+    background-color: rgba(0, 0, 0, .1);
+}
+
+.markdown-body.spread {
+    left: 0;
+}
+.markdown-nav.shrink {
+    left: -300px;
+}
+.toggle-menu.move {
+    left: 0;
+}
+
+@media screen and (max-width: 700px) {
+    .markdown-body {
+        visibility: hidden;
+    }
+    .markdown-body.spread {
+        visibility: visible;
+    }
+}
+

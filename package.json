@@ -5,7 +5,7 @@
   "main": "bin/www",
   "scripts": {
     "start": "concurrently \"node-dev bin/www\" \"npm run watch\"",
-    "watch": "browser-sync start --port 3000 --proxy \"localhost\" --files \"public/**/*\"",
+    "watch": "browser-sync start --port 3000 --proxy \"localhost\" --reload-delay 300 --files \"public/**/*\" --files \"views/**/*\" --files \"routes/**/*\" --files \"nav.config.json\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -25,7 +25,6 @@
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
     "koa-static": "^3.0.0",
-    "lodash": "^4.17.15",
     "markdown-it": "^9.0.1"
   },
   "devDependencies": {

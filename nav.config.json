@@ -1,19 +1,51 @@
 {
-  "indexLink": "/part1/block1",
+  "title": "Document/说明文档",
+  "useDirectoryNav": false,
+  "indexLink": "/menu1/README",
+  "save": [
+    ".md",
+    ".yaml",
+    ".yml"
+  ],
+  "exclude": [],
   "menus": [
     {
-      "title": "1.项目介绍",
-      "link": "/part1/block1",
+      "title": "menu1",
       "children": [
         {
-          "title": "组件说明",
-          "link": "/part2/block1",
+          "title": "menu1_submenu",
           "children": [
             {
-              "title": "组件说明",
-              "link": "/part2/block2/menu1"
+              "title": "three_level_menu",
+              "link": "/menu1/menu1_submenu/three_level_menu"
             }
           ]
+        },
+        {
+          "title": "Demo",
+          "link": "/menu1/Demo"
+        },
+        {
+          "title": "README",
+          "link": "/menu1/README"
+        },
+        {
+          "title": "README-zh-CN",
+          "link": "/menu1/README-zh-CN"
+        }
+      ]
+    },
+    {
+      "title": "menu2",
+      "children": [
+        {
+          "title": "menu2_submenu",
+          "link": "/menu2/menu2_submenu"
+        },
+        {
+          "title": "menu2_yaml",
+          "link": "/md/menu2/menu2_yaml.yaml",
+          "staticFile": true
         }
       ]
     }

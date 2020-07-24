@@ -1,13 +1,14 @@
-module.exports.buildContentPage = (mdContent='', mdNav='') => `<!doctype html>
+module.exports.buildContentPage = (mdContent='', mdNav='', title='Document/说明文档') => `<!doctype html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>项目说明文档/Project Desc Doc</title>
-    <link rel="stylesheet" href="/stylesheets/index.css">
+    <title>${title}</title>
     <link rel="stylesheet" href="/stylesheets/github-markdown.css">
+    <link rel="stylesheet" href="/stylesheets/index.css">
+    <script src="/javascripts/index.js"></script>
 </head>
 <body>
 <div class="markdown-container">
@@ -15,11 +16,16 @@ module.exports.buildContentPage = (mdContent='', mdNav='') => `<!doctype html>
         ${mdNav}
     </div>
     <div class="markdown-content">
-        <div class="markdown-body">
+        <span class="toggle-menu" id="toggle-menu"></span>
+        <div class="markdown-body" id="markdown-body">
            ${mdContent}
         </div>
     </div>
 </div>
-<script src="/javascripts/index.js"></script>
+<script>
+    var toggleBtn = document.getElementById('toggle-menu');
+    toggleBtn.onclick = toggleMenu;
+    handleHighLight(window.location.pathname);
+</script>
 </body>
 </html>`;

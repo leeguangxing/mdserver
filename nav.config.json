@@ -1,6 +1,6 @@
 {
   "title": "Document/说明文档",
-  "useDirectoryNav": false,
+  "useDirectoryNav": true,
   "indexLink": "/menu1/README",
   "save": [
     ".md",

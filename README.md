@@ -14,7 +14,7 @@ The scaffolding is based on koa2 to implement server-side rendering of md docume
 
 5、Support using html tags.
 
-Demo：[http://139.9.209.176:8000](http://139.9.209.176:8000)
+Demo：[https://leeguangxing.cn/mdserver_demo](https://leeguangxing.cn/mdserver_demo)
 
 <br>
 
@@ -33,11 +33,9 @@ yarn start
 
 ## Auto restart
 
-Use node-dev to restart koa2 server (use port 80).
+Use nodemon to restart koa2 server (port 80).
 
-Use browser-sync to reload the browser when .md file was Changed（use port 3000, will delay 300ms to wait for node-dev restart）。
-
-> notice：When the routers automatically created from the document directory, the addition, deletion and modification of documents will not be automatically updated to the browser.
+Use browser-sync to reload the browser（browser-sync UI port 3001, browser pages port 3002, browser-sync server port 3003）。
 
 <br>
 
@@ -54,10 +52,11 @@ The process of generating dynamic routing on koa2 is:
 
 ## Environment variables
 The following environment variables are used in the project:
+
 |Name|Description|Default|
 |:---:|:---:|:---:|
 |PORT|The listening port of koa2|80|
-|NODE_ENV|When set to production, log information etc. will not be console|undefined|
+|NODE_ENV|When set to production, log information etc. will not be console, and will not set request to browser-sync server|undefined|
 
 <br>
 
@@ -74,9 +73,10 @@ The following environment variables are used in the project:
 
 The project provides the clear-md-directory.js script to clean up irrelevant files and directories in the public/md directory. This is useful if your document and project code are in the same directory.
 It will clean up according to the following configuration in nav.config.json:
+
 |Attribute|Description|Required|
 |:---:|:---:|:---:|
-|save|The suffix of the file that needs to be retained, as long as it needs to be retained .md|Yes|
+|save|The suffix of the file to be retained, at least .md|Yes|
 |exclude|The directory path to be deleted as a whole, relative to the public/md path|No|
 
 clear-md-directory.js will do the following:
@@ -98,6 +98,4 @@ Copy the project code to the public/md directory and clean up irrelevant files t
 
 ## Attention
 1、The names of directories and files in the public/md directory cannot contain periods (.).
-
-2、When the routers automatically created from the document directory, the addition, deletion and modification of documents will not be automatically updated to the browser.
 

@@ -87,4 +87,17 @@ function onListening() {
     ? 'pipe ' + addr
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
+
+  const isProduction = process.env.NODE_ENV === 'production';
+  if (!isProduction) {
+    const http = require('http');
+    const request = http.get({
+      hostname: 'localhost',
+      port: 3003,
+      agent: false,
+    });
+    request.on('error', function(err) {
+      console.log('browser-sync server is not ready...');
+    });
+  }
 }

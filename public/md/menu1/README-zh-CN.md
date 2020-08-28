@@ -1,3 +1,5 @@
+[English](/README.md) | 简体中文
+
 # 介绍
 
 该脚手架基于 koa2 实现 md 文档的服务器端渲染。它可以帮助我们完成以下任务：  
@@ -12,7 +14,7 @@
 
 5、支持使用 html 标签。
 
-Demo 地址：[http://139.9.209.176:8000](http://139.9.209.176:8000)
+Demo 地址：[https://leeguangxing.cn/mdserver_demo](https://leeguangxing.cn/mdserver_demo)
 
 <br>
 
@@ -31,11 +33,9 @@ yarn start
 
 ## 自动更新
 
-koa2 服务的自动重启使用了 node-dev（默认 80 端口）。
+koa2 服务器的自动重启使用了 nodemon（默认 80 端口）。
 
-md 文件修改后的浏览器自动刷新使用了 browser-sync（默认 3000 端口，它会延迟 300ms 等待 node-dev 重启）。
-
-> 注意：当使用从文档目录自动构建路由的方式时，文档的增删和修改将不会自动更新到浏览器。
+koa2 重启后会请求 browser-sync 服务器刷新浏览器（browser-sync UI 3001 端口，浏览器打开页面端口为 3002，browser-sync 服务器监听端口为 3003）。
 
 <br>
 
@@ -52,10 +52,11 @@ koa2 端动态路由的生成过程是：
 
 ## 环境变量
 项目中使用以下环境变量：
+
 |名称|说明|默认值|
 |:---:|:---:|:---:|
 |PORT|koa2的监听端口|80|
-|NODE_ENV|设置为 production 时将不会输出日志信息等|undefined|
+|NODE_ENV|设置为 production 时将不会输出日志信息，不会向 browser-sync 服务器 发送刷新请求|undefined|
 
 <br>
 
@@ -71,16 +72,17 @@ koa2 端动态路由的生成过程是：
 |staticFile|是否作为静态文件打开，若是，路由路径前需要补充 /md/|否|
 
 项目提供 clear-md-directory.js 脚本用于清理 public/md 目录下无关的文件和目录。如果你的说明文档和项目代码在同一目录下，这很有用。它会根据 nav.config.json 以下的配置进行清理：
+
 |属性|说明|是否必须|
 |:---:|:---:|:---:|
-|save|需要保留的文件的后缀，只要需要保留 .md|是|
+|save|需要保留的文件的后缀，至少需要保留 .md|是|
 |exclude|需要整个删除的目录路径，相对于 public/md 的路径|否|
 
 clear-md-directory.js 会做如下工作：  
 
 1、清理 exclude 排除的目录。
 
-2、清理 save 保留后缀意外的文件。
+2、清理 save 保留后缀以外的文件。
 
 3、清理空文件夹。
 
@@ -95,7 +97,3 @@ clear-md-directory.js 会做如下工作：
 
 ## 注意问题
 1、public/md 目录下目录名称和文件名不能包含点号（.）。
-
-2、使用从文档目录自动构建路由的方式时，文档的增删和修改将不会自动更新到浏览器。
-
-

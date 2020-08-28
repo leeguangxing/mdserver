@@ -1,12 +1,12 @@
 {
   "name": "@leeguangxing/mdserver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The scaffolding is used to quickly create local web services for MD documents and automatically synchronize to browsers after modifying documents.",
   "main": "bin/www",
   "scripts": {
-    "start": "concurrently \"node-dev bin/www\" \"npm run watch\"",
-    "watch": "browser-sync start --port 3000 --proxy \"localhost\" --reload-delay 300 --files \"public/**/*\" --files \"views/**/*\" --files \"routes/**/*\" --files \"nav.config.json\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "concurrently \"yarn server\" \"yarn browser\"",
+    "server": "nodemon --watch ./ --ext js,md bin/www",
+    "browser": "node browsersync.js"
   },
   "keywords": [
     "koa2",
@@ -30,6 +30,6 @@
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "concurrently": "^4.1.1",
-    "node-dev": "^3.1.3"
+    "nodemon": "^2.0.4"
   }
 }

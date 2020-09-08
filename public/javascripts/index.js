@@ -68,7 +68,10 @@ function renderMenuContent(path, renderOnly) {
 // 监听浏览器的前进后退
 window.onpopstate = function(event) {
     if(event.type === 'popstate') {
-        var path = event.state.path;
+        var path = '';
+        if(event.state) {
+            path = event.state.path;
+        }
         renderMenuContent(path, true);
     }
 };

@@ -72,7 +72,9 @@ window.onpopstate = function(event) {
         if(event.state) {
             path = event.state.path;
         }
-        renderMenuContent(path, true);
+        if(path) {
+            renderMenuContent(path, true);
+        }
     }
 };
 

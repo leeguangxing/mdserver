@@ -1,4 +1,4 @@
-module.exports.buildContentPage = (mdContent='', mdNav='', title='Document/说明文档') => `<!doctype html>
+module.exports.buildContentPage = (mdContent = '', mdNav = '', title = 'Document/说明文档') => `<!doctype html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -24,8 +24,10 @@ module.exports.buildContentPage = (mdContent='', mdNav='', title='Document/说�
 </div>
 <script>
     var toggleBtn = document.getElementById('toggle-menu');
+    var pathname = window.location.pathname;
     toggleBtn.onclick = toggleMenu;
-    handleHighLight(window.location.pathname);
+    handleHighLight(pathname);
+    history.pushState({path: pathname}, null);
 </script>
 </body>
 </html>`;

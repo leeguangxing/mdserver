@@ -14,7 +14,7 @@
 
 5、支持使用 html 标签。
 
-Demo 地址：[https://leeguangxing.cn/mdserver_demo](https://leeguangxing.cn/mdserver_demo)
+![demo](https://www.leeguangxing.cn/pic/mdserver.jpg)
 
 <br>
 
@@ -26,7 +26,7 @@ yarn install
 ```
 2、启动本地 web 服务 demo：
 ```bash
-yarn start
+yarn dev
 ```
 
 <br>

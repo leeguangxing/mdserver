@@ -14,7 +14,7 @@ The scaffolding is based on koa2 to implement server-side rendering of md docume
 
 5、Support using html tags.
 
-Demo：[https://leeguangxing.cn/mdserver_demo](https://leeguangxing.cn/mdserver_demo)
+![demo](https://www.leeguangxing.cn/pic/mdserver.jpg)
 
 <br>
 
@@ -26,7 +26,7 @@ yarn install
 ```
 2、Start the local Web Server：
 ```bash
-yarn start
+yarn dev
 ```
 
 <br>
